@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+    Author: Silvia Mariana Reyesvera Quijano - 000813686 
+    Date: November 14th, 2020
+
+    This code displays either a form to retrieve user information for the game
+    or the game display; this depends on the logic in the memoramagame.js file
+    and user interaction. 
+    
+    The game represented here is a memory training game 
+    with a set of 36 cards (18 distinct cards with a matching card). The user
+    has to find all of the matching cards to win the game.
+
+    IMAGES OBTAINED FROM:
+    https://www.canstockphoto.com/line-computer-components-icons-65142941.html
+    https://www.shutterstock.com/image-vector/computer-hardware-pc-parts-components-vector-640133140
+-->
+
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formandgame.css">
+    <script src="js/memoramagame.js"></script>
+</head>
+
+<body>
+    <!-- FORM DISPLAY -->
+    <form id="information" name="information">
+        <h1>Let's Play Memorama!</h1>
+        <h3>Input your information to access the game</h3>
+        <div id="inputFields">
+            <div id="nameField">
+                <label for="name">Name:</label>
+                <input id="name" type="text" maxlength="40" required>
+                <span id="nameError"></span>
+
+            </div>
+
+            <div id="ageField">
+                <label for="age">Age:</label>
+                <input id="age" type="number" min="1" max="200" required>
+                <span id="ageError"></span>
+            </div>
+
+            <div id="colorField">
+                <label for="color">Favorite Color:</label>
+                <input type="color" id="color" required>
+            </div>
+
+            <div id="submitField">
+                <input type="submit" id="submit" value="submit">
+                <div id="submitError"></div>
+            </div>
+        </div>
+    </form>
+
+    <!-- GAME DISPLAY -->
+    <div id="game">
+        <h1 id="gameTitle">Let's Play!</h1>
+        <div id="stopwatch">
+            <h3>Current Player:</h3>
+            <span id="nameDisplay"></span><br>
+            <span id="ageDisplay"></span><br><br>
+            <span id="time"></span>
+        </div>
+        <div id="cardsTable">
+            <table>
+                <tbody id="cards">
+                </tbody>
+            </table>
+        </div>
+        <div id="bestScore">
+            <h3>Best Score:</h3>
+            <span id="storedName"></span><br>
+            <span id="storedAge"></span><br><br>
+            <span id="stopwatchScore"></span>
+        </div>
+
+        <div id="helpButton">
+            <input type="button" id="back" value="&larr;">
+            <input type="button" id="help" value="?">
+        </div>
+        <!-- The help information is only displays when the help button is pressed in the game -->
+        <div id="helpWindow">
+            <h3>INSTRUCTIONS</h3>
+            <ul>
+                <li>There is a set of images on the other side of the provided cards.</li>
+                <li>Each card uncovers one image and has a matching card somewhere else in the set.</li>
+                <li>Select two cards, if they match, they will remain opened. </li>
+                <li>If the cards don't match, they will be turned again.</li>
+                <li>Uncover all of the matching cards to win the game.</li>
+            </ul>
+        </div>
+        <!-- The end of game window is displayed once the game ends either in success or failure -->
+        <div id="endOfGame">
+            <div id="endGameContent">
+                <div id="message"></div>
+
+                <input id="playAgain" type="button" value="Play again?"><br>
+                <input id="backToForm" type="button" value="Back to Form?">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <br>
+        IMAGES FROM:<br>
+        https://www.shutterstock.com/image-vector/computer-hardware-pc-parts-components-vector-640133140<br><br>
+        https://www.canstockphoto.com/line-computer-components-icons-65142941.html
+    </footer>
+    
+</body>
+
+</html>
